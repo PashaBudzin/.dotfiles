@@ -8,6 +8,7 @@
     typescript-language-server
     vscode-langservers-extracted
     yaml-language-server
+    pyright
     codespell
     stylua
     prettierd
