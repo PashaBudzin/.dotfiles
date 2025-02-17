@@ -19,6 +19,7 @@
     ./system/gaming.nix
     ./system/kdeconnect.nix
     ./system/devtools.nix
+    ./system/programs.nix
   ];
 
   # Bootloader.
