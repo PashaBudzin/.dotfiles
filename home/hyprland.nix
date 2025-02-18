@@ -42,12 +42,7 @@
 
       # See https://wiki.hyprland.org/Configuring/Environment-variables/
 
-      env = XCURSOR_SIZE,24
-      env = HYPRCURSOR_SIZE,24
       env = QT_QPA_PLATFORM,wayland;xcb
-
-      env = QT_QPA_PLATFORMTHEME,qt5ct
-
       env = QT_WAYLAND_DISABLED_INTERFACES,wp_fractional_scale_manager_v1
 
       env = XDG_CURRENT_DESKTOP,Hyprland
@@ -55,6 +50,8 @@
       env = XDG_SESSION_DESKTOP,Hyprland
 
       env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+
+      env = GTK_USE_PORTAL,1
 
       #####################
       ### LOOK AND FEEL ###
