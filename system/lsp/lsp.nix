@@ -13,5 +13,6 @@
     stylua
     prettierd
     gcc
+    gopls
   ];
 }
