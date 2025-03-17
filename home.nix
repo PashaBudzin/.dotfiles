@@ -87,6 +87,10 @@
     QT_QPA_PLATFORM = "wayland";
   };
 
+  home.sessionPath = [
+    "$HOME/.volta/bin/"
+  ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
