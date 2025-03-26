@@ -205,8 +205,8 @@
 
   services.hyprpaper.enable = true;
   services.hyprpaper.settings = {
-    preload = toString ../wallpapers/nix-magenta-pink-1920x1080.png;
-    wallpaper = ", " + toString ../wallpapers/nix-magenta-pink-1920x1080.png;
+    preload = toString ../wallpapers/nix-magenta.png;
+    wallpaper = ", " + toString ../wallpapers/nix-magenta.png;
   };
 
   home.packages = with pkgs; [
