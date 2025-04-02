@@ -37,6 +37,7 @@
       profile = "personal";
       timezone = "Europe/Kyiv";
       locale = "uk_UA.UTF-8";
+      enableTailscale = true;
     };
     userSettings = {
       # ------- USER SETTINGS ---------
