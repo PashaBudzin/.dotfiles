@@ -1,6 +1,8 @@
 {pkgs, ...}: {
   environment.defaultPackages = with pkgs; [
     bottles
+    ffmpeg
+    jq
   ];
 
   services.zerotierone.enable = true;
