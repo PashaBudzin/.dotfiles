@@ -8,6 +8,7 @@
     clippy
     python3
     insomnia
+    gnumake
   ];
 
   programs.nix-ld.enable = true;
