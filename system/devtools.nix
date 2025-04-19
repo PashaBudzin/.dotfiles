@@ -8,6 +8,7 @@
     clippy
     python3
     insomnia
+    perl
     gnumake
   ];
 
