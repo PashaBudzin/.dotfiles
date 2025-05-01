@@ -97,5 +97,6 @@ in {
   home.packages = with pkgs; [
     git
     gh
+    gum
   ];
 }

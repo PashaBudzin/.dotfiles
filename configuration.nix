@@ -20,6 +20,7 @@
     ./system/kdeconnect.nix
     ./system/devtools.nix
     ./system/programs.nix
+    ./system/virtualization.nix
   ];
 
   # Bootloader.
@@ -90,10 +91,8 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = "${userSettings.username}";
-    extraGroups = ["networkmanager" "wheel" "libvirtd" "kvm"];
+    extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-    ];
   };
 
   # Install firefox.

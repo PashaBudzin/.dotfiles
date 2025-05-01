@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "My config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -37,6 +37,7 @@
     userSettings = settings.userSettings;
 
   in {
+    nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
@@ -48,23 +49,31 @@
           ./configuration.nix
           catppuccin.nixosModules.catppuccin
         ];
-    };
-    homeConfigurations = {
-      ${userSettings.username} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-          ./home.nix
-          catppuccin.homeManagerModules.catppuccin
-          ags.homeManagerModules.default
-          inputs.hyprpanel.homeManagerModules.hyprpanel
-        ];
-        extraSpecialArgs = {
-        extraSpecialArgs = {
+      };
+      installerIso = nixpkgs.lib.nixosSystem {
+        specialArgs = {
           inherit inputs;
-          inherit userSettings;
-          inherit systemSettings;
         };
+        modules = [
+          ./iso/iso.nix
+        ];
+    };
+  };
+  homeConfigurations = {
+    ${userSettings.username} = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+        ./home.nix
+        catppuccin.homeManagerModules.catppuccin
+        ags.homeManagerModules.default
+        inputs.hyprpanel.homeManagerModules.hyprpanel
+      ];
+      extraSpecialArgs = {
+        inherit inputs;
+        inherit userSettings;
+        inherit systemSettings;
       };
     };
   };
+};
 }

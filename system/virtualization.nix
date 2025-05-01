@@ -1,13 +1,15 @@
-{ config, pkgs, systemConfig, lib, ... }:
+{ config, pkgs, userSettings, systemSettings, lib, ... }:
 
 { config = lib.mkMerge [
-    (lib.mkIf systemConfig.enableVirtualization {
+    (lib.mkIf systemSettings.enableVirtualization {
       virtualisation.libvirtd.enable = true;
+      virtualisation.libvirtd.qemuPackage = pkgs.qemu_kvm;
+      virtualisation.libvirtd.onBoot = "start";
+        programs.virt-manager.enable = true;
 
-      users.users.yourUsername.extraGroups = [  ];
+      users.users.${userSettings.username}.extraGroups = ["libvirtd" "kvm"];
 
       environment.systemPackages = with pkgs; [
-        virt-manager
         virt-viewer
         qemu
         dnsmasq
