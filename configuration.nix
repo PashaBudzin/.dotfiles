@@ -90,7 +90,7 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = "${userSettings.username}";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "libvirtd" "kvm"];
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];

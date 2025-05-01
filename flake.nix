@@ -31,25 +31,12 @@
         inputs.hyprpanel.overlay
       ];
     };
-    systemSettings = {
-      # ------- SYSTEM SETTINGS ---------
-      hostname = "nixos";
-      profile = "personal";
-      timezone = "Europe/Kyiv";
-      locale = "uk_UA.UTF-8";
-    };
-    userSettings = {
-      # ------- USER SETTINGS ---------
-      username = "pasha";
-      name = "Pasha";
-      email = "pashabudzin@proton.me";
-      dotfilesDir = "~/.dotfiles";
-      terminal = "kitty";
-      fontPkg = pkgs.maple-mono-NF;
-      font = "Maple Mono NF";
-    };
+
+    settings = import ./settings.nix { pkgs = pkgs; };
+    systemSettings = settings.systemSettings;
+    userSettings = settings.userSettings;
+
   in {
-    nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
@@ -61,7 +48,6 @@
           ./configuration.nix
           catppuccin.nixosModules.catppuccin
         ];
-      };
     };
     homeConfigurations = {
       ${userSettings.username} = home-manager.lib.homeManagerConfiguration {
@@ -73,12 +59,12 @@
           inputs.hyprpanel.homeManagerModules.hyprpanel
         ];
         extraSpecialArgs = {
+        extraSpecialArgs = {
           inherit inputs;
           inherit userSettings;
           inherit systemSettings;
         };
       };
     };
-    devShells.${system}.default = (import ./dev.nix) pkgs;
   };
 }
