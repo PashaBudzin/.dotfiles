@@ -22,7 +22,7 @@ in {
     cursorTheme = {
       name = "catppuccin-mocha-lavender";
 
-      package = pkgs.catppuccin-cursors;
+      package = pkgs.catppuccin-cursors.mochaLavender;
     };
 
     gtk3.extraConfig = {
@@ -42,5 +42,9 @@ in {
     };
   };
 
-  home.sessionVariables.GTK_THEME = theme;
+    home.sessionVariables = {
+        XCURSOR_THEME = "catppuccin-mocha-lavender";
+        XCURSOR_SIZE = "24";
+        GTK_THEME = theme;
+    };
 }

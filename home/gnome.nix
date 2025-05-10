@@ -68,7 +68,13 @@
         "blur-my-shell@aunetx"
       ];
     };
+
+
+    "org/gnome/desktop/interface" = {
+      cursor-size = 16;
+    };
   };
+
 
   home.packages = with pkgs.gnomeExtensions; [
     forge

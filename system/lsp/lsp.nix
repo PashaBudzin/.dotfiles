@@ -14,5 +14,6 @@
     prettierd
     gcc
     gopls
+    nixfmt
   ];
 }
