@@ -1,7 +1,5 @@
-{pkgs, ...}: {
-  hardware.graphics = {
-    enable = true;
-  };
+{ pkgs, ... }: {
+  hardware.graphics = { enable = true; };
 
   programs.gamemode.enable = true;
 

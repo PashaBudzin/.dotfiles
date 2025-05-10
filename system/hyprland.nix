@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -7,8 +7,8 @@
   };
 
   xdg.portal = with pkgs; {
-    extraPortals = [xdg-desktop-portal-hyprland];
-    configPackages = [hyprland];
+    extraPortals = [ xdg-desktop-portal-hyprland ];
+    configPackages = [ hyprland ];
     xdgOpenUsePortal = true;
   };
 }

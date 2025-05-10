@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   xdg.enable = true;
   xdg.portal.enable = true;
   xdg.portal.extraPortals = with pkgs; [
@@ -199,9 +199,7 @@
   xdg.configFile."hypr/bluelight.sh".source = ./hypr/bluelight.sh;
   xdg.configFile."hypr/bluelighttoggle.sh".source = ./hypr/bluelighttoggle.sh;
 
-  programs.wlogout = {
-    enable = true;
-  };
+  programs.wlogout = { enable = true; };
 
   services.hyprpaper.enable = true;
   services.hyprpaper.settings = {

@@ -1,11 +1,7 @@
 { pkgs, inputs, ... }:
 
 {
-    environment.systemPackages = with pkgs; [
-        nixd 
-        alejandra
-        nil
-    ];
+  environment.systemPackages = with pkgs; [ nixd alejandra nil ];
 
-    nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 }

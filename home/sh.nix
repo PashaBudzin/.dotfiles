@@ -1,8 +1,5 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{ config, pkgs, ... }:
+let
   shellAliases = {
     ls = "ls --color";
     l = "ls -la";
@@ -19,9 +16,7 @@ in {
   programs.zoxide.enable = true;
   programs.btop.enable = true;
 
-  programs.fastfetch = {
-    enable = true;
-  };
+  programs.fastfetch = { enable = true; };
 
   programs.zsh = {
     enable = true;
@@ -32,23 +27,16 @@ in {
 
     antidote = {
       enable = true;
-      plugins = [
-        ''
-          zsh-users/zsh-autosuggestions
-          Aloxaf/fzf-tab
-          chisui/zsh-nix-shell
-        ''
-      ];
+      plugins = [''
+        zsh-users/zsh-autosuggestions
+        Aloxaf/fzf-tab
+        chisui/zsh-nix-shell
+      ''];
     };
 
     oh-my-zsh = {
       enable = true;
-      plugins = [
-        "git"
-        "aws"
-        "sudo"
-        "command-not-found"
-      ];
+      plugins = [ "git" "aws" "sudo" "command-not-found" ];
     };
     initExtra = ''
       bindkey -v
@@ -89,14 +77,8 @@ in {
 
     enable = true;
 
-    settings = {
-      add_newline = false;
-    };
+    settings = { add_newline = false; };
   };
 
-  home.packages = with pkgs; [
-    git
-    gh
-    gum
-  ];
+  home.packages = with pkgs; [ git gh gum ];
 }

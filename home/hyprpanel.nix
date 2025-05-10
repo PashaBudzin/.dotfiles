@@ -1,8 +1,4 @@
-{
-  inputs,
-  userSettings,
-  ...
-}: {
+{ inputs, userSettings, ... }: {
   programs.hyprpanel = {
     # Enable the module.
     # Default: false
@@ -34,9 +30,9 @@
     layout = {
       "bar.layouts" = {
         "0" = {
-          left = ["dashboard" "workspaces" "systray" "notifications"];
-          middle = ["media"];
-          right = ["volume" "bluetooth" "battery" "clock"];
+          left = [ "dashboard" "workspaces" "systray" "notifications" ];
+          middle = [ "media" ];
+          right = [ "volume" "bluetooth" "battery" "clock" ];
         };
       };
     };

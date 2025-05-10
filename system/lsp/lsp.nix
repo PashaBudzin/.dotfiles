@@ -1,7 +1,5 @@
-{pkgs, ...}: {
-  imports = [
-    ./nixd.nix
-  ];
+{ pkgs, ... }: {
+  imports = [ ./nixd.nix ];
 
   environment.systemPackages = with pkgs; [
     lua-language-server

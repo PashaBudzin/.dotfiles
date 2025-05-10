@@ -1,4 +1,4 @@
-{userSettings, ...}: {
+{ userSettings, ... }: {
   imports = [
     ./home/sh.nix
     ./home/neovim/nvim.nix
@@ -89,9 +89,7 @@
     QT_QPA_PLATFORM = "wayland";
   };
 
-  home.sessionPath = [
-    "$HOME/.volta/bin/"
-  ];
+  home.sessionPath = [ "$HOME/.volta/bin/" ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

@@ -1,9 +1,5 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
-    youtube-music
-    materialgram
-    mangohud
-  ];
+{ pkgs, ... }: {
+  home.packages = with pkgs; [ youtube-music materialgram mangohud ];
 
   xdg.mimeApps = {
     enable = true;

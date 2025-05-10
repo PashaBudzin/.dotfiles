@@ -1,5 +1,5 @@
-{pkgs, ...}: let
-  theme = "catppuccin-mocha-mauve-standard";
+{ pkgs, ... }:
+let theme = "catppuccin-mocha-mauve-standard";
 in {
   gtk = {
     enable = true;
@@ -15,7 +15,7 @@ in {
 
       package = pkgs.catppuccin-gtk.override {
         variant = "mocha";
-        accents = ["mauve" "lavender"];
+        accents = [ "mauve" "lavender" ];
       };
     };
 
@@ -42,9 +42,9 @@ in {
     };
   };
 
-    home.sessionVariables = {
-        XCURSOR_THEME = "catppuccin-mocha-lavender";
-        XCURSOR_SIZE = "24";
-        GTK_THEME = theme;
-    };
+  home.sessionVariables = {
+    XCURSOR_THEME = "catppuccin-mocha-lavender";
+    XCURSOR_SIZE = "24";
+    GTK_THEME = theme;
+  };
 }

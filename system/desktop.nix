@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   services.xserver = {
     enable = true;
 
@@ -8,7 +8,7 @@
 
     desktopManager.gnome = {
       # enable fractional scaling
-      extraGSettingsOverridePackages = [pkgs.mutter];
+      extraGSettingsOverridePackages = [ pkgs.mutter ];
       extraGSettingsOverrides = ''
         [org.gnome.mutter]
         experimental-features=['scale-monitor-framebuffer']
@@ -29,9 +29,6 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal
-    ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal ];
   };
 }
