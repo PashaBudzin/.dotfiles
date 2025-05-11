@@ -203,8 +203,8 @@
 
   services.hyprpaper.enable = true;
   services.hyprpaper.settings = {
-    preload = toString ../wallpapers/nix-magenta.png;
-    wallpaper = ", " + toString ../wallpapers/nix-magenta.png;
+    preload = toString ../wallpapers/koi.png;
+    wallpaper = ", " + toString ../wallpapers/koi.png;
   };
 
   home.packages = with pkgs; [
