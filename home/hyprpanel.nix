@@ -24,13 +24,15 @@
     #   theme.bar.menus.text = "#123ABC";
     # };
 
+    override.theme = { transparent = false; };
+
     # Configure bar layouts for monitors.
     # See 'https://hyprpanel.com/configuration/panel.html'.
     # Default: null
     layout = {
       "bar.layouts" = {
         "0" = {
-          left = [ "dashboard" "workspaces" "systray" "notifications" ];
+          left = [ "dashboard" "workspaces" "systray" "notifications" "cava" ];
           middle = [ "media" ];
           right = [ "volume" "bluetooth" "battery" "clock" ];
         };
@@ -52,6 +54,10 @@
           hideSeconds = true;
         };
         weather.unit = "metric";
+      };
+
+      menus.dashboard = {
+
       };
 
       menus.dashboard.directories.enabled = false;

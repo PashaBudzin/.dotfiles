@@ -61,7 +61,6 @@ in {
 
       export PATH=$PATH:$HOME/.volta/bin
 
-      fastfetch
     '';
   };
 
