@@ -79,5 +79,5 @@ in {
     settings = { add_newline = false; };
   };
 
-  home.packages = with pkgs; [ git gh gum ];
+  home.packages = with pkgs; [ gum ];
 }

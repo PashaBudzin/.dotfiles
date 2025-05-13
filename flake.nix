@@ -13,7 +13,7 @@
     hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, ags, ... }@inputs:
+  outputs = { nixpkgs, home-manager, catppuccin, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -48,7 +48,6 @@
           modules = [
             ./home.nix
             catppuccin.homeManagerModules.catppuccin
-            ags.homeManagerModules.default
             inputs.hyprpanel.homeManagerModules.hyprpanel
           ];
           extraSpecialArgs = {

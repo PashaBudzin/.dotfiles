@@ -10,7 +10,7 @@
   userSettings = {
     # ------- USER SETTINGS ---------
     username = "pasha";
-    name = "Pasha";
+    name = "PashaBudzin";
     email = "pashabudzin@proton.me";
     dotfilesDir = "~/.dotfiles";
     terminal = "kitty";

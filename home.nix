@@ -3,6 +3,7 @@
     ./home/sh.nix
     ./home/neovim/nvim.nix
     ./home/terminal/kitty.nix
+    ./home/terminal/ghostty.nix
     ./home/gtk.nix
     ./home/gnome.nix
     ./home/apps.nix
@@ -10,10 +11,10 @@
     ./home/hyprlock.nix
     ./home/hyprpanel.nix
     ./home/rofi.nix
-    ./home/ags.nix
     ./home/catppuccin.nix
     ./home/tmux.nix
     ./home/cursor.nix
+    ./home/git.nix
     ./home/qt.nix
   ];
 
