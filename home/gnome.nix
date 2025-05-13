@@ -62,7 +62,7 @@
       enabled-extensions = [ "forge@jmmaranan.com" "blur-my-shell@aunetx" ];
     };
 
-    "org/gnome/desktop/interface" = { cursor-size = 16; };
+    "org/gnome/desktop/interface" = { cursor-size = 14; };
   };
 
   home.packages = with pkgs.gnomeExtensions; [
