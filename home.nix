@@ -15,6 +15,7 @@
     ./home/tmux.nix
     ./home/cursor.nix
     ./home/git.nix
+    ./home/yazi.nix
     ./home/qt.nix
   ];
 
