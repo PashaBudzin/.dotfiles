@@ -17,6 +17,8 @@
     ./home/git.nix
     ./home/yazi.nix
     ./home/qt.nix
+
+    ./scripts/scripts.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
