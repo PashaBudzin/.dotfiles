@@ -34,7 +34,7 @@
         "0" = {
           left = [ "dashboard" "workspaces" "systray" "notifications" "cava" ];
           middle = [ "media" ];
-          right = [ "volume" "bluetooth" "battery" "clock" ];
+          right = [ "volume" "bluetooth" "network" "battery" "clock" ];
         };
       };
     };
@@ -47,6 +47,11 @@
     settings = {
       bar.launcher.autoDetectIcon = true;
       bar.workspaces.show_icons = true;
+
+      bar.customModules.cava.showIcon = false;
+
+      bar.bluetooth.label = false;
+      bar.network.label = false;
 
       menus.clock = {
         time = {
@@ -64,11 +69,14 @@
       menus.dashboard.stats.enable_gpu = true;
 
       theme.bar.transparent = true;
+      theme.bar.buttons.radius = "10em";
 
       theme.font = {
         name = userSettings.font;
         size = "16px";
       };
+      theme.bar.buttons.style = "split";
+
     };
   };
 }
