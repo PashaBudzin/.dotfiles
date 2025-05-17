@@ -6,6 +6,9 @@
       virtualisation.libvirtd.enable = true;
       virtualisation.libvirtd.qemuPackage = pkgs.qemu_kvm;
       virtualisation.libvirtd.onBoot = "start";
+
+      virtualisation.waydroid = { enable = true; };
+
       programs.virt-manager.enable = true;
 
       users.users.${userSettings.username}.extraGroups = [ "libvirtd" "kvm" ];
