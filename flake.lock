@@ -481,6 +481,29 @@
         "type": "github"
       }
     },
+    "nvim-config": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1747848023,
+        "narHash": "sha256-3AcwTeAN6vOthnjoABrT+mYzT1S09YvdStuEmqxxUJM=",
+        "owner": "PashaBudzin",
+        "repo": "nvim-config",
+        "rev": "10ee62aadfdbc2324a658ec179e620f27e05cf68",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PashaBudzin",
+        "repo": "nvim-config",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -510,7 +533,8 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprpanel": "hyprpanel",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_3",
+        "nvim-config": "nvim-config"
       }
     },
     "systems": {
