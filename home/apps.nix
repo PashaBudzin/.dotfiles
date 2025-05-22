@@ -4,6 +4,6 @@
     materialgram
     mangohud
     libresprite
+    tdf
   ];
-
 }
