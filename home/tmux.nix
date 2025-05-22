@@ -19,7 +19,6 @@
       bind c new-window -c "#{pane_current_path}"
       bind '"' split-window -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
-      bind-key -n C-l send-keys "C-l" "clear" Enter
 
       set -g mouse on
       set -g base-index 1

@@ -3,8 +3,10 @@
     enable = true;
     package = pkgs.rofi-wayland;
 
-    plugins = with pkgs;
-      [ (rofi-calc.override { rofi-unwrapped = rofi-wayland-unwrapped; }) ];
+    plugins = with pkgs; [
+      (rofi-calc.override { rofi-unwrapped = rofi-wayland-unwrapped; })
+      rofi-emoji-wayland
+    ];
 
     extraConfig = {
       modi = "run,drun,calc";
