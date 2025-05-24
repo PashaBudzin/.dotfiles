@@ -9,7 +9,6 @@
     ./system/flatpak.nix
     ./system/hyprland.nix
     ./system/autoupdate.nix
-    ./system/lsp/lsp.nix
     ./system/gaming.nix
     ./system/kdeconnect.nix
     ./system/devtools.nix
