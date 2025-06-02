@@ -24,12 +24,10 @@
     #   theme.bar.menus.text = "#123ABC";
     # };
 
-    override.theme = { transparent = false; };
-
     # Configure bar layouts for monitors.
     # See 'https://hyprpanel.com/configuration/panel.html'.
     # Default: null
-    layout = {
+    override = {
       "bar.layouts" = {
         "0" = {
           left = [ "dashboard" "workspaces" "systray" "notifications" "cava" ];

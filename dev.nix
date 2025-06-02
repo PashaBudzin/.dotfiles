@@ -4,6 +4,7 @@ pkgs.mkShell {
     nodejs
     python3Minimal
     pnpm
+    rust
     cargo
     rustc
     clippy
