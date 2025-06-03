@@ -493,15 +493,15 @@
       "locked": {
         "lastModified": 1748462228,
         "narHash": "sha256-/krdz2G7SrTrzxooYhUcK4teAkz6tuYV5K3xt0W+kbE=",
-        "owner": "PashaBudzin",
-        "repo": "nvim-config",
+        "ref": "refs/heads/main",
         "rev": "8c6d68e93e27e72f2a227d9d55b4d62805dfd76d",
-        "type": "github"
+        "revCount": 46,
+        "type": "git",
+        "url": "file:nvim"
       },
       "original": {
-        "owner": "PashaBudzin",
-        "repo": "nvim-config",
-        "type": "github"
+        "type": "git",
+        "url": "file:nvim"
       }
     },
     "pre-commit-hooks": {
