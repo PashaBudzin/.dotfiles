@@ -38,7 +38,7 @@ in {
       enable = true;
       plugins = [ "git" "aws" "sudo" "command-not-found" ];
     };
-    initExtra = ''
+    initContent = ''
       bindkey -v
       bindkey '^p' history-search-backward
       bindkey '^n' history-search-forward
@@ -60,7 +60,6 @@ in {
       eval "$(zoxide init --cmd cd zsh)"
 
       export PATH=$PATH:$HOME/.volta/bin
-
     '';
   };
 

@@ -3,8 +3,7 @@
     volta
     bun
     go
-    cargo
-    rustc
+    rustup
     clippy
     python3
     insomnia
