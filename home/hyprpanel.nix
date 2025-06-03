@@ -27,12 +27,16 @@
     # Configure bar layouts for monitors.
     # See 'https://hyprpanel.com/configuration/panel.html'.
     # Default: null
-    override = {
-      "bar.layouts" = {
-        "0" = {
-          left = [ "dashboard" "workspaces" "systray" "notifications" "cava" ];
-          middle = [ "media" ];
-          right = [ "volume" "bluetooth" "network" "battery" "clock" ];
+    settings = {
+      layout = {
+
+        bar.layouts = {
+          "0" = {
+            left =
+              [ "dashboard" "workspaces" "systray" "notifications" "cava" ];
+            middle = [ "media" ];
+            right = [ "volume" "bluetooth" "network" "battery" "clock" ];
+          };
         };
       };
     };
