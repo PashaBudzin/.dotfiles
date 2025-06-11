@@ -27,6 +27,12 @@
     # Configure bar layouts for monitors.
     # See 'https://hyprpanel.com/configuration/panel.html'.
     # Default: null
+    # Configure and theme almost all options from the GUI.
+
+    # Options that require '{}' or '[]' are not yet implemented,
+    # except for the layout above.
+    # See 'https://hyprpanel.com/configuration/settings.html'.
+    # Default: <same as gui>
     settings = {
       layout = {
 
@@ -39,14 +45,6 @@
           };
         };
       };
-    };
-
-    # Configure and theme almost all options from the GUI.
-    # Options that require '{}' or '[]' are not yet implemented,
-    # except for the layout above.
-    # See 'https://hyprpanel.com/configuration/settings.html'.
-    # Default: <same as gui>
-    settings = {
       bar.launcher.autoDetectIcon = true;
       bar.workspaces.show_icons = true;
 

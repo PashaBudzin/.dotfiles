@@ -38,6 +38,7 @@ in {
       enable = true;
       plugins = [ "git" "aws" "sudo" "command-not-found" ];
     };
+
     initContent = ''
       bindkey -v
       bindkey '^p' history-search-backward

@@ -50,7 +50,7 @@
           inherit pkgs;
           modules = [
             ./home.nix
-            catppuccin.homeManagerModules.catppuccin
+            catppuccin.homeModules.catppuccin
             inputs.hyprpanel.homeManagerModules.hyprpanel
             inputs.nvim-config.homeManagerModules.default
           ];
