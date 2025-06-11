@@ -13,6 +13,7 @@
     ./system/kdeconnect.nix
     ./system/devtools.nix
     ./system/programs.nix
+    ./system/lsp/nixd.nix
     ./system/virtualization.nix
   ];
 
