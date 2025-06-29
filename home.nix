@@ -9,7 +9,7 @@
     ./home/apps.nix
     ./home/hyprland.nix
     ./home/hyprlock.nix
-    ./home/hyprpanel.nix
+    # ./home/hyprpanel.nix
     ./home/rofi.nix
     ./home/catppuccin.nix
     ./home/tmux.nix

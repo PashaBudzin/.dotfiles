@@ -6,6 +6,7 @@
     timezone = "Europe/Kyiv";
     locale = "uk_UA.UTF-8";
     enableVirtualization = true;
+    system = "x86_64-linux";
   };
   userSettings = {
     # ------- USER SETTINGS ---------

@@ -2,12 +2,6 @@
   programs.hyprpanel = {
     # Enable the module.
     # Default: false
-    enable = true;
-
-    # Add '/nix/store/.../hyprpanel' to your
-    # Hyprland config 'exec-once'.
-    # Default: false
-    hyprland.enable = true;
 
     # Fix the overwrite issue with HyprPanel.
     # See below for more information.

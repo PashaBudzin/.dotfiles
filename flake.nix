@@ -7,10 +7,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland.url = "github:hyprwm/Hyprland";
     catppuccin.url = "github:catppuccin/nix";
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
+    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    # hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
     nvim-config.url = "git+file:nvim";
     nvim-config.inputs.nixpkgs.follows = "nixpkgs";
     nvim-config.inputs.home-manager.follows = "home-manager";
@@ -18,16 +22,18 @@
 
   outputs = { nixpkgs, home-manager, catppuccin, ... }@inputs:
     let
-      lib = nixpkgs.lib;
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [ inputs.hyprpanel.overlay ];
-      };
-
       settings = import ./settings.nix { pkgs = pkgs; };
       systemSettings = settings.systemSettings;
       userSettings = settings.userSettings;
+
+      lib = nixpkgs.lib;
+
+      system = systemSettings.system;
+
+      pkgs = import nixpkgs {
+        inherit system;
+        # overlays = [ inputs.hyprpanel.overlay ];
+      };
 
     in {
       nixosConfigurations = {
@@ -51,8 +57,9 @@
           modules = [
             ./home.nix
             catppuccin.homeModules.catppuccin
-            inputs.hyprpanel.homeManagerModules.hyprpanel
+            # inputs.hyprpanel.homeManagerModules.hyprpanel
             inputs.nvim-config.homeManagerModules.default
+            inputs.zen-browser.homeModules.beta
           ];
           extraSpecialArgs = {
             inherit inputs;

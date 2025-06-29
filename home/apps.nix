@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   home.packages = with pkgs; [
     youtube-music
     materialgram
@@ -6,4 +6,6 @@
     libresprite
     tdf
   ];
+
+  programs.zen-browser.enable = true;
 }
