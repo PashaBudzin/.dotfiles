@@ -38,10 +38,9 @@
 
         bar.layouts = {
           "0" = {
-            left =
-              [ "dashboard" "workspaces" "systray" "notifications" "cava" ];
+            left = [ "dashboard" "workspaces" "systray" "notifications" ];
             middle = [ "media" ];
-            right = [ "volume" "bluetooth" "network" "battery" "clock" ];
+            right = [ "volume" "bluetooth" "battery" "clock" ];
           };
         };
       };
