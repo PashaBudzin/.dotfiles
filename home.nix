@@ -10,6 +10,7 @@
     ./home/hyprland.nix
     ./home/hyprlock.nix
     # ./home/hyprpanel.nix
+    ./home/waybar.nix
     ./home/rofi.nix
     ./home/catppuccin.nix
     ./home/tmux.nix
