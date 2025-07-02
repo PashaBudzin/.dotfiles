@@ -5,11 +5,12 @@
     settings = {
       mainBar = {
         layer = "top";
-        position = "left";
+        position = "right";
 
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "mpris" ];
-        modules-right = [ "pulseaudio" "battery" "network" "clock" ];
+        modules-right =
+          [ "pulseaudio" "battery" "network" "bluetooth" "clock" ];
 
         "hyprland/workspaces" = {
           format = "{icon}";
@@ -65,12 +66,37 @@
           format-disconnected = "⚠";
           tooltip = true;
         };
+        bluetooth = {
+          "format-on" = "󰂯";
+          "format-off" = "O󰂲";
+          "format-disabled" = "󰂲";
+          "format-connected-battery" = "󰂯";
+          "format-alt" = "{device_alias} 󰂯";
+          "tooltip-format" = ''
+            {controller_alias}	{controller_address}
+
+            {num_connections} connected'';
+          "tooltip-format-connected" = ''
+            {controller_alias}	{controller_address}
+
+            {num_connections} connected
+
+            {device_enumerate}'';
+          "tooltip-format-enumerate-connected" = ''
+            {device_alias}
+            {device_address}'';
+          "tooltip-format-enumerate-connected-battery" = ''
+            {device_alias}
+            {device_address}
+            {device_battery_percentage}%'';
+          "on-click-right" = "blueman-manager";
+        };
       };
     };
 
     style = ''
       #clock, #pulseaudio, #battery, #network {
-        padding: 6px;
+        padding: 8px;
       }
 
       window#waybar {
@@ -84,7 +110,7 @@
 
         border-radius: 30px;
         margin-top: 10px;
-        padding: 0px 4px;
+        padding: 0px;
       }
 
       .modules-right {
@@ -92,7 +118,7 @@
 
         border-radius: 30px;
         margin-bottom: 10px;
-        padding: 0px 4px;
+        padding: 10px 4px;
       }
 
       .modules-center {
