@@ -6,6 +6,7 @@
     libresprite
     pied
     tdf
+    readest
   ];
 
   xdg.mimeApps = {
