@@ -7,10 +7,30 @@
         layer = "top";
         position = "right";
 
-        modules-left = [ "hyprland/workspaces" ];
+        modules-left = [ "clock" "pulseaudio" "battery" "network" "bluetooth" ];
         modules-center = [ "mpris" ];
-        modules-right =
-          [ "pulseaudio" "battery" "network" "bluetooth" "clock" ];
+        modules-right = [ "memory" "power-profiles-daemon" ];
+
+        "memory" = {
+          "interval" = 30;
+          "format" = "{}% ";
+          "rotate" = 90;
+        };
+
+        "power-profiles-daemon" = {
+          "rotate" = 90;
+          "format" = "{icon}";
+          "tooltip-format" = ''
+            Power profile: {profile}
+            Driver: {driver}'';
+          "tooltip" = true;
+          "format-icons" = {
+            "default" = "";
+            "performance" = "";
+            "balanced" = "";
+            "power-saver" = "";
+          };
+        };
 
         "hyprland/workspaces" = {
           format = "{icon}";
@@ -95,7 +115,7 @@
     };
 
     style = ''
-      #clock, #pulseaudio, #battery, #network {
+      #clock, #pulseaudio, #battery, #network, #power-profiles-daemon {
         padding: 8px;
       }
 
