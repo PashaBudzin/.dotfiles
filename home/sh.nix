@@ -9,12 +9,18 @@ let
     md = "mkdir";
     cal = "cal -m";
     cd = "z";
-    dev = "nix develop ~/.dotfiles";
+    flinit = "nix flake init -t github:NixOS/templates/utils-generic";
   };
 in {
   programs.fzf.enable = true;
   programs.zoxide.enable = true;
   programs.btop.enable = true;
+
+  programs.direnv = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+  };
 
   programs.fastfetch = { enable = true; };
 
