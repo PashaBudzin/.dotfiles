@@ -9,7 +9,7 @@ let
     md = "mkdir";
     cal = "cal -m";
     cd = "z";
-    flinit = "nix flake init -t github:NixOS/templates/utils-generic";
+    flinit = "nix flake init -t templates#utils-generic";
   };
 in {
   programs.fzf.enable = true;
