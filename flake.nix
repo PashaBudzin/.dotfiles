@@ -15,7 +15,7 @@
     catppuccin.url = "github:catppuccin/nix";
     # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     # hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
-    nvim-config.url = "git+file:nvim";
+    nvim-config.url = "github:PashaBudzin/nvim-config";
     nvim-config.inputs.nixpkgs.follows = "nixpkgs";
     nvim-config.inputs.home-manager.follows = "home-manager";
   };
