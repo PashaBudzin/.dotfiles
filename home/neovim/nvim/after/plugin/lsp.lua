@@ -180,6 +180,7 @@ vim.g.rustaceanvim = {
 -- })
 
 require("lspconfig").ts_ls.setup({})
+require("lspconfig").clangd.setup({})
 
 -- require("lspconfig").nil_ls.setup({})
 
