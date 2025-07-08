@@ -15,9 +15,9 @@
     catppuccin.url = "github:catppuccin/nix";
     # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
     # hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
-    nvim-config.url = "github:PashaBudzin/nvim-config";
-    nvim-config.inputs.nixpkgs.follows = "nixpkgs";
-    nvim-config.inputs.home-manager.follows = "home-manager";
+    # nvim-config.url = "github:PashaBudzin/nvim-config";
+    # nvim-config.inputs.nixpkgs.follows = "nixpkgs";
+    # nvim-config.inputs.home-manager.follows = "home-manager";
   };
 
   outputs = { nixpkgs, home-manager, catppuccin, ... }@inputs:
@@ -58,7 +58,7 @@
             ./home.nix
             catppuccin.homeModules.catppuccin
             # inputs.hyprpanel.homeManagerModules.hyprpanel
-            inputs.nvim-config.homeManagerModules.default
+            # inputs.nvim-config.homeManagerModules.default
             inputs.zen-browser.homeModules.beta
           ];
           extraSpecialArgs = {
