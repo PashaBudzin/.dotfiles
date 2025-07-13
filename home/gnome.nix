@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   dconf.settings = {
     "org/gnome/desktop/wm/preferences" = { num-workspaces = 9; };
 
@@ -44,10 +44,26 @@
       close = [ "<Super>c" ];
 
       toggle-fullscreen = [ "<Super>f" ];
+
+      minimize = [ ];
     };
 
     "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+      ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" =
+      {
+        name = "open terminal";
+        command = "kitty";
+        binding = "<Super>q";
+      };
+
+    "org/gnome/settings-daemon/plugins/media-keys" = {
       "www" = [ "<Super>b" ];
+      "screensaver" = [ "<Shift><Super>L" ];
     };
 
     "org/gnome/shell/keybindings/screenshot" = {
@@ -59,10 +75,17 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
 
-      enabled-extensions = [ "forge@jmmaranan.com" "blur-my-shell@aunetx" ];
+      enabled-extensions = [
+        "forge@jmmaranan.com"
+        "blur-my-shell@aunetx"
+        "mediacontrols@cliffniff.github.com"
+      ];
     };
 
     "org/gnome/desktop/interface" = { cursor-size = 14; };
+
+    "org/gnome/shell/extensions/forge" = { "focus-on-hover-enabled" = true; };
+
   };
 
   home.packages = with pkgs.gnomeExtensions; [

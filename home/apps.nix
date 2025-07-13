@@ -21,7 +21,7 @@
     };
   };
 
-  home.sessionVariables = { BROWSER = "zen-browser"; };
+  home.sessionVariables = { BROWSER = "zen"; };
 
   programs.zen-browser.enable = true;
 
