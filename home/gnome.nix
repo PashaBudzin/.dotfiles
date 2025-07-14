@@ -18,15 +18,15 @@
       switch-to-workspace-3 = [ "<Super>3" ];
 
       move-to-workspace-4 = [ "<Super><Shift>4" ];
-      switch-to-application-4 = [ ];
+      switch-to-application-4 = [ "<Alt>4" ];
       switch-to-workspace-4 = [ "<Super>4" ];
 
       move-to-workspace-5 = [ "<Super><Shift>5" ];
-      switch-to-application-5 = [ ];
+      switch-to-application-5 = [ "<Alt>5" ];
       switch-to-workspace-5 = [ "<Super>5" ];
 
       move-to-workspace-6 = [ "<Super><Shift>6" ];
-      switch-to-application-6 = [ "<Alt>1" ];
+      switch-to-application-6 = [ "<Alt>6" ];
       switch-to-workspace-6 = [ "<Super>6" ];
 
       move-to-workspace-7 = [ "<Super><Shift>7" ];
@@ -64,6 +64,18 @@
     "org/gnome/settings-daemon/plugins/media-keys" = {
       "www" = [ "<Super>b" ];
       "screensaver" = [ "<Shift><Super>L" ];
+    };
+
+    "org/gnome/shell/keybindings" = {
+      switch-to-application-1 = [ ];
+      switch-to-application-2 = [ ];
+      switch-to-application-3 = [ ];
+      switch-to-application-4 = [ ];
+      switch-to-application-5 = [ ];
+      switch-to-application-6 = [ ];
+      switch-to-application-7 = [ ];
+      switch-to-application-8 = [ ];
+      switch-to-application-9 = [ ];
     };
 
     "org/gnome/shell/keybindings/screenshot" = {
