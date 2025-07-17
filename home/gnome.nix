@@ -64,6 +64,7 @@
     "org/gnome/settings-daemon/plugins/media-keys" = {
       "www" = [ "<Super>b" ];
       "screensaver" = [ "<Shift><Super>L" ];
+      "play" = [ "<Super>i" ];
     };
 
     "org/gnome/shell/keybindings" = {
@@ -96,7 +97,11 @@
 
     "org/gnome/desktop/interface" = { cursor-size = 14; };
 
-    "org/gnome/shell/extensions/forge" = { "focus-on-hover-enabled" = true; };
+    "org/gnome/shell/extensions/forge" = {
+      "focus-on-hover-enabled" = true;
+      "workspace-skip-tile" = "2";
+      "move-pointer-focus-enabled" = true;
+    };
 
   };
 
