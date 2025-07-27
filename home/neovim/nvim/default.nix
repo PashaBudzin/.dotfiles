@@ -1,5 +1,5 @@
 { pkgs, config, ... }: {
-  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ./.;
+  home.file.".config/nvim".source = ./.;
   home.packages = with pkgs; [
     # neovim
     neovim
