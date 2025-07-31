@@ -11,4 +11,6 @@
     configPackages = [ hyprland ];
     xdgOpenUsePortal = true;
   };
+
+  environment.systemPackages = with pkgs; [ mesa libglvnd libdrm ];
 }
