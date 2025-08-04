@@ -69,6 +69,8 @@ in {
       eval "$(zoxide init --cmd cd zsh)"
 
       export PATH=$PATH:$HOME/.volta/bin
+
+      source $HOME/.secrets.sh
     '';
   };
 

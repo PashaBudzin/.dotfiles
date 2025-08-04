@@ -33,6 +33,8 @@ in {
 
     git
 
+    nodejs_22
+
     tree-sitter
 
     reflex
