@@ -38,6 +38,9 @@ in {
     tree-sitter
 
     reflex
+
+    cmake
+    sqlite
   ];
 
   home.activation.cloneNvimConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
