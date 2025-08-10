@@ -6,6 +6,7 @@
     rustup
     clippy
     python3
+    python3Packages.matplotlib
     insomnia
     perl
     gnumake
