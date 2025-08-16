@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 
-{
+let zenEnabled = config.apps.zen.enable or config.apps.zen.setDefault;
+in {
   options = {
     apps = {
       zen = {
@@ -19,17 +20,17 @@
     };
   };
 
-  config = lib.mkIf (config.apps.zen.enable or config.apps.zen.setDefault) {
-    programs.zen-browser.enable = true;
-  } // {
+  config = {
+    programs.zen-browser.enable = zenEnabled;
+
     home.packages = lib.concatLists [
-      (lib.mkIf config.apps.youtubeMusic [ pkgs.youtube-music ])
-      (lib.mkIf config.apps.materialgram [ pkgs.materialgram ])
-      (lib.mkIf config.apps.mangohud [ pkgs.mangohud ])
-      (lib.mkIf config.apps.libresprite [ pkgs.libresprite ])
-      (lib.mkIf config.apps.pied [ pkgs.pied ])
-      (lib.mkIf config.apps.tdf [ pkgs.tdf ])
-      (lib.mkIf config.apps.readest [ pkgs.readest ])
+      (lib.mkIf config.apps.youtubeMusic [ pkgs.youtube-music ]).content
+      (lib.mkIf config.apps.materialgram [ pkgs.materialgram ]).content
+      (lib.mkIf config.apps.mangohud [ pkgs.mangohud ]).content
+      (lib.mkIf config.apps.libresprite [ pkgs.libresprite ]).content
+      (lib.mkIf config.apps.pied [ pkgs.pied ]).content
+      (lib.mkIf config.apps.tdf [ pkgs.tdf ]).content
+      (lib.mkIf config.apps.readest [ pkgs.readest ]).content
     ];
 
     xdg.mimeApps = lib.mkIf config.apps.zen.setDefault {

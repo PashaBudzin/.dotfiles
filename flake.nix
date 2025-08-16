@@ -33,7 +33,7 @@
       pkgs = import nixpkgs { inherit system; };
     in {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        lenovo = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs systemSettings userSettings; };
           inherit system;
           modules = [

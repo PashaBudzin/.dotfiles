@@ -1,4 +1,4 @@
-{ config, lib, userSettings, ... }:
+{ config, lib, pkgs, userSettings, ... }:
 
 {
   options.dev.git = lib.mkEnableOption "Enable Git and GitHub setup.";
@@ -8,12 +8,12 @@
       enable = true;
       userName = userSettings.name;
       userEmail = userSettings.email;
-      extraConfig = { init.defaultBranch = "main"; };
+      extraConfig = {
+        init.defaultBranch = "main";
+        credential.helper = "!${pkgs.gh}/bin/gh auth git-credential";
+      };
     };
 
-    programs.gh = {
-      enable = true;
-      gitCredentialHelper.enable = true;
-    };
+    programs.gh.enable = true;
   };
 }
