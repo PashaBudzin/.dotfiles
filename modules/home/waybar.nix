@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  home.packages = with pkgs; [ maple-mono.NF ];
+
   programs.waybar = {
     enable = true;
 
