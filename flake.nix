@@ -16,11 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
-    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    # hyprpanel.inputs.nixpkgs.follows = "nixpkgs";
-    # nvim-config.url = "github:PashaBudzin/nvim-config";
-    # nvim-config.inputs.nixpkgs.follows = "nixpkgs";
-    # nvim-config.inputs.home-manager.follows = "home-manager";
+    # stylix = {
+    #   url = "nix-community/stylix";
+    #   inputs.stylix.follows = "nixpkgs";
+    # };
   };
 
   outputs = { nixpkgs, home-manager, catppuccin, ... }@inputs:
@@ -29,47 +28,30 @@
       systemSettings = settings.systemSettings;
       userSettings = settings.userSettings;
 
-      lib = nixpkgs.lib;
-
       system = systemSettings.system;
 
-      pkgs = import nixpkgs {
-        inherit system;
-        # overlays = [ inputs.hyprpanel.overlay ];
-      };
-
+      pkgs = import nixpkgs { inherit system; };
     in {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-            inherit systemSettings;
-            inherit userSettings;
-          };
+          specialArgs = { inherit inputs systemSettings userSettings; };
           inherit system;
-          modules = [ ./configuration.nix catppuccin.nixosModules.catppuccin ];
-        };
-        installerIso = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [ ./iso/iso.nix ];
-        };
-      };
-      homeConfigurations = {
-        ${userSettings.username} = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
           modules = [
-            ./home.nix
-            catppuccin.homeModules.catppuccin
-            # inputs.hyprpanel.homeManagerModules.hyprpanel
-            # inputs.nvim-config.homeManagerModules.default
-            inputs.zen-browser.homeModules.beta
+            ./hosts/lenovo/default.nix
+            home-manager.nixosModules.home-manager
           ];
-          extraSpecialArgs = {
-            inherit inputs;
-            inherit userSettings;
-            inherit systemSettings;
-          };
         };
       };
+      # homeConfigurations = {
+      #   ${userSettings.username} = home-manager.lib.homeManagerConfiguration {
+      #     inherit pkgs;
+      #     modules = [ ./home.nix ];
+      #     extraSpecialArgs = {
+      #       inherit inputs;
+      #       inherit userSettings;
+      #       inherit systemSettings;
+      #     };
+      #   };
+      # };
     };
 }

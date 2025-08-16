@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   systemSettings = {
     # ------- SYSTEM SETTINGS ---------
-    hostname = "nixos";
     profile = "personal";
     timezone = "Europe/Kyiv";
     locale = "uk_UA.UTF-8";
@@ -13,7 +12,7 @@
     username = "pasha";
     name = "PashaBudzin";
     email = "pashabudzin@proton.me";
-    dotfilesDir = "/home/pasha/.dotfiles";
+    flakeDir = "/home/pasha/.dotfiles";
     terminal = "kitty";
     fontPkg = pkgs.maple-mono.NF;
     font = "Maple Mono NF";
