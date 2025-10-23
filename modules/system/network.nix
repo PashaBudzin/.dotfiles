@@ -21,8 +21,8 @@ with lib;
     services.zerotierone.enable = config.networking.zerotier;
 
     networking.firewall.allowedUDPPorts =
-      lib.mkIf config.networking.openCommonPorts [ 4230 4321 ];
+      lib.mkIf config.networking.openCommonPorts [ 4230 4321 88 500 3544 4500 ];
     networking.firewall.allowedTCPPorts =
-      lib.mkIf config.networking.openCommonPorts [ 4230 4321 ];
+      lib.mkIf config.networking.openCommonPorts [ 4230 4321 3074 ];
   };
 }

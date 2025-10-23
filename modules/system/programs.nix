@@ -12,6 +12,12 @@ with lib;
   };
 
   config = lib.mkIf config.utils.common {
-    environment.systemPackages = with pkgs; [ ffmpeg imagemagick jq neovim ];
+    environment.systemPackages = with pkgs; [
+      ffmpeg
+      imagemagick
+      jq
+      neovim
+      obs-studio
+    ];
   };
 }
