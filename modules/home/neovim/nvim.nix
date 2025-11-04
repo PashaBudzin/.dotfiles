@@ -46,6 +46,8 @@
         astro-language-server
         graphql-language-service-cli
 
+        kotlin-language-server
+
         git
         nodejs_22
         tree-sitter
