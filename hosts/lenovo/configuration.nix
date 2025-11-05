@@ -94,7 +94,7 @@
   utils.devtools = true;
 
   virtualization.qemu = true;
-  virtualization.waydroid = true;
+  virtualization.waydroid = false;
 
   networking.zerotier = true;
   networking.openCommonPorts = true;

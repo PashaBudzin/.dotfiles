@@ -19,6 +19,7 @@
     ../../modules/home/git.nix
     ../../modules/home/yazi.nix
     ../../modules/home/qt.nix
+    ../../modules/home/androidstudio.nix
 
     ../../modules/scripts/scripts.nix
   ];
@@ -49,6 +50,8 @@
   dev.nvim.enable = true;
   dev.nvim.cloneConfig = true;
 
+  dev.androidStudio = true;
+
   dev.tmux = true;
 
   utils.yazi = true;
@@ -65,7 +68,7 @@
     libresprite = true;
     pied = true;
     tdf = true;
-    readest = true;
+    readest = false;
   };
 
   programs.home-manager.enable = true;

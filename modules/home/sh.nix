@@ -43,7 +43,7 @@
       programs.btop.enable = true;
       programs.fastfetch.enable = true;
       programs.lazygit.enable = true;
-      home.packages = with pkgs; [ gum ];
+      home.packages = with pkgs; [ gum dysk ];
     })
 
     # Direnv
