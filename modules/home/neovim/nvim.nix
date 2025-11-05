@@ -46,7 +46,11 @@
         astro-language-server
         graphql-language-service-cli
 
+        # java/kotlin 
         kotlin-language-server
+        ktfmt
+        google-java-format
+        jdt-language-server
 
         git
         nodejs_22
