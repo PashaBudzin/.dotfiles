@@ -1,15 +1,15 @@
 { pkgs, userSettings, ... }: {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
 
     plugins = with pkgs; [
-      (rofi-calc.override { rofi-unwrapped = rofi-wayland-unwrapped; })
-      rofi-emoji-wayland
+      (rofi-calc.override { rofi-unwrapped = rofi; })
+      rofi-emoji
     ];
 
     extraConfig = {
-      modi = "run,drun,calc";
+      modi = "emoji,drun,calc";
       icon-theme = "Oranchelo";
       show-icons = true;
       terminal = userSettings.terminal;
@@ -21,6 +21,7 @@
       display-run = "   Run ";
       display-window = " 󰕰  Window";
       display-calc = " Calculator";
+      display-emoji = "󰞅 Emoji";
       display-Network = " 󰤨  Network";
       sidebar-mode = true;
     };

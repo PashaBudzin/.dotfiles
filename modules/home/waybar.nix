@@ -20,7 +20,7 @@
         };
 
         "power-profiles-daemon" = {
-          "rotate" = 90;
+          rotate = 90;
           "format" = "{icon}";
           "tooltip-format" = ''
             Power profile: {profile}
@@ -89,11 +89,11 @@
           tooltip = true;
         };
         bluetooth = {
+          rotate = 90;
           "format-on" = "󰂯";
-          "format-off" = "O󰂲";
+          "format-off" = "󰂲";
           "format-disabled" = "󰂲";
           "format-connected-battery" = "󰂯";
-          "format-alt" = "{device_alias} 󰂯";
           "tooltip-format" = ''
             {controller_alias}	{controller_address}
 
@@ -121,6 +121,26 @@
         padding: 8px;
       }
 
+      #battery {
+        color: @green;
+      }
+
+      #pulseaudio {
+        color: @mauve;
+      }
+
+      #network {
+        color: @yellow;
+      }
+
+      #bluetooth {
+        color: @lavender;
+      }
+
+      #power-profiles-daemon {
+        color: @red;
+      }
+
       window#waybar {
         background: rgba(0, 0, 0, 0);
         color: @blue;
@@ -140,7 +160,7 @@
 
         border-radius: 30px;
         margin-bottom: 10px;
-        padding: 10px 4px;
+        padding: 10px 0px 10px;
       }
 
       .modules-center {

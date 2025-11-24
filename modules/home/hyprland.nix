@@ -203,8 +203,8 @@
 
   services.hyprpaper.enable = true;
   services.hyprpaper.settings = {
-    preload = toString ../../assets/wallpapers/koi.png;
-    wallpaper = ", " + toString ../../assets/wallpapers/koi.png;
+    preload = toString ../../assets/wallpapers/snow-valley.png;
+    wallpaper = ", " + toString ../../assets/wallpapers/snow-valley.png;
   };
 
   home.packages = with pkgs; [

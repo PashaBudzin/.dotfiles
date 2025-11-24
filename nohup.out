@@ -1,0 +1,9 @@
+
+(waybar:395552): Gtk-WARNING **: 08:00:35.735: Unknown key Settings in /home/pasha/.config/gtk-3.0/settings.ini
+[2025-11-24 08:00:35.777] [info] Using configuration file /home/pasha/.config/waybar/config
+[2025-11-24 08:00:35.779] [info] Discovered appearance 'dark'
+[2025-11-24 08:00:35.814] [info] Using CSS file /home/pasha/.config/waybar/style.css
+[2025-11-24 08:00:35.844] [info] Bar configured (width: 36, height: 1000) for output: eDP-1
+[2025-11-24 08:00:35.845] [warning] Requested width: 36 is less than the minimum width: 44 required by the modules
+[2025-11-24 08:00:35.845] [info] Bar configured (width: 44, height: 1000) for output: eDP-1
+[2025-11-24 08:00:44.372] [info] Quitting.
