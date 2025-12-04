@@ -22,6 +22,8 @@ with lib;
       pkgs.insomnia
       pkgs.perl
       pkgs.gnumake
+
+      pkgs.opencode
     ];
 
     programs.nix-ld.enable = config.utils.devtools;
