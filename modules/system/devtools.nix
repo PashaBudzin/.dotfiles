@@ -22,7 +22,7 @@ with lib;
       pkgs.insomnia
       pkgs.perl
       pkgs.gnumake
-
+      pkgs.lsof
       pkgs.opencode
     ];
 
