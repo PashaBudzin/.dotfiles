@@ -25,6 +25,8 @@
       source = ${./hypr/rules.conf}
       source = ${./hypr/mocha.conf}
 
+      source = $HOME/.run.conf
+
       ################
       ### MONITORS ###
       ################

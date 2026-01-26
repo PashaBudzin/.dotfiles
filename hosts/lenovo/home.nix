@@ -64,7 +64,7 @@
     zen.enable = true;
     zen.setDefault = true;
 
-    pear-desktop = true;
+    youtubeMusic = true;
     materialgram = true;
     mangohud = true;
     libresprite = true;
