@@ -56,7 +56,7 @@
 
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
-          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
         ];
 
         www = [ "<Super>b" ];
@@ -100,8 +100,13 @@
 
       "org/gnome/shell/extensions/forge" = {
         "focus-on-hover-enabled" = true;
-        "workspace-skip-tile" = "2";
         "move-pointer-focus-enabled" = true;
+        "keybindings/con-stacked-layout-toggle" = [ ];
+      };
+
+      "org/gnome/shell/extensions/blur-my-shell/application" = {
+        blur = true;
+        enable-all = true;
       };
     };
 

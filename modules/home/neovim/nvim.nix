@@ -36,12 +36,15 @@
         vscode-langservers-extracted
         yaml-language-server
         pyright
+
         codespell
+
         stylua
         prettierd
         gcc
         gopls
         clang-tools
+
         nixfmt-classic
         tailwindcss-language-server
         astro-language-server
@@ -58,7 +61,6 @@
         tree-sitter
         reflex
         cmake
-        sqlite
       ] ++ config.dev.nvim.extraPackages;
 
     home.activation.cloneNvimConfig = lib.mkIf config.dev.nvim.cloneConfig
