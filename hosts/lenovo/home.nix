@@ -17,6 +17,7 @@
     ../../modules/home/git.nix
     ../../modules/home/yazi.nix
     ../../modules/home/qt.nix
+    ../../modules/home/fonts.nix
 
     # ../../modules/home/androidstudio.nix
 

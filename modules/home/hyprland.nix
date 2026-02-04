@@ -182,7 +182,7 @@
       # Example windowrule v2
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
 
-      windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
+      # windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
     '';
   };
 

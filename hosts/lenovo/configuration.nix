@@ -50,6 +50,8 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.canon-cups-ufr2 ];
+  services.ipp-usb.enable = true;
 
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
