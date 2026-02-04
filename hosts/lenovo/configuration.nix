@@ -18,6 +18,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nix.optimise.automatic = true;
+
   networking.hostName = "lenovo";
 
   networking.networkmanager.enable = true;
@@ -95,7 +97,7 @@
   utils.common = true;
   utils.devtools = true;
 
-  virtualization.qemu = true;
+  virtualization.qemu = false;
   virtualization.waydroid = false;
 
   networking.zerotier = true;
