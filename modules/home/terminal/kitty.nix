@@ -13,7 +13,7 @@
         hide_window_decorations = "yes";
         confirm_os_window_close = 0;
         font_size = 12;
-        background_opacity = 0.8;
+        background_opacity = 1;
       };
       font = {
         package = pkgs.nerd-fonts.jetbrains-mono;

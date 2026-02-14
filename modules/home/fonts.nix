@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ open-dyslexic ];
+  home.packages = with pkgs; [ open-dyslexic googlesans-code ];
 }

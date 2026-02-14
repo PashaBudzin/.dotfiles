@@ -2,12 +2,12 @@
 
   catppuccin = {
     flavor = "mocha";
-    enable = true;
+    enable = false;
     rofi.enable = false;
 
     # gtk.enable = false;
 
-    kvantum.enable = true;
+    kvantum.enable = false;
 
     gtk.icon.enable = false;
   };

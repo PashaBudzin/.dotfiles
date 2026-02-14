@@ -14,7 +14,5 @@
     email = "pashabudzin@proton.me";
     flakeDir = "/home/pasha/.dotfiles";
     terminal = "kitty";
-    fontPkg = pkgs.maple-mono.NF;
-    font = "Maple Mono NF";
   };
 }

@@ -7,7 +7,8 @@ in {
     iconTheme = {
       name = "Papirus-Dark";
 
-      package = pkgs.catppuccin-papirus-folders;
+      # package = pkgs.catppuccin-papirus-folders;
+      package = pkgs.papirus-icon-theme;
     };
 
     theme = {
@@ -45,6 +46,5 @@ in {
   home.sessionVariables = {
     XCURSOR_THEME = "catppuccin-mocha-lavender";
     XCURSOR_SIZE = "24";
-    GTK_THEME = theme;
   };
 }

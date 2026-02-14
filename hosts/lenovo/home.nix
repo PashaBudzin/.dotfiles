@@ -2,29 +2,32 @@
   imports = [
     inputs.catppuccin.homeModules.catppuccin
     inputs.zen-browser.homeModules.beta
+    inputs.dms.homeModules.dank-material-shell
 
     ../../modules/home/sh.nix
     ../../modules/home/neovim/nvim.nix
     ../../modules/home/terminal/kitty.nix
-    ../../modules/home/gtk.nix
+
     ../../modules/home/gnome.nix
     ../../modules/home/apps.nix
     ../../modules/home/waybar.nix
     ../../modules/home/rofi.nix
-    ../../modules/home/catppuccin.nix
+
     ../../modules/home/tmux.nix
     ../../modules/home/cursor.nix
     ../../modules/home/git.nix
     ../../modules/home/yazi.nix
-    ../../modules/home/qt.nix
+
     ../../modules/home/fonts.nix
 
-    # ../../modules/home/androidstudio.nix
+    ../../modules/home/dms/dms.nix
 
-    ../../modules/home/hyprland.nix
-    ../../modules/home/hyprlock.nix
+    ../../modules/home/hyprland/hyprland.nix
 
     ../../modules/scripts/scripts.nix
+
+    # ../../modules/home/catppuccin.nix
+    # ../../modules/home/gtk.nix
   ];
 
   home.username = userSettings.username;
@@ -37,7 +40,6 @@
   };
 
   desktops.gnome = true;
-  dev.git = true;
 
   cli.enable = true;
   cli.direnv.enable = true;
@@ -49,6 +51,7 @@
   cli.bash.enable = true;
 
   cli.starship.enable = true;
+  dev.git = true;
 
   dev.nvim.enable = true;
   dev.nvim.cloneConfig = true;
