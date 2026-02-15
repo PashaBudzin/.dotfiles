@@ -118,4 +118,6 @@
 
     '';
   };
+
+  services.hypridle.enable = true;
 }
