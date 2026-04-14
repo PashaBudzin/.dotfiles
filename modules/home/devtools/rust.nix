@@ -1,1 +1,1 @@
-{ pkgs }: { home.packages = with pkgs; [ pkgs.rustup pkgs.clippy ]; }
+{ pkgs, ... }: { home.packages = with pkgs; [ rustup ]; }

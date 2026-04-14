@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [ python3 uv pyright jupyter-all ruff ];
+  home.packages = with pkgs; [ ruff uv pyright jupyter-all ];
 }
