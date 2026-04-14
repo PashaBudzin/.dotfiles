@@ -31,30 +31,18 @@
 
         # Language servers & formatters
         lua-language-server
+        stylua
 
         typescript-language-server
         vscode-langservers-extracted
         yaml-language-server
-        pyright
-
         codespell
 
-        stylua
-        prettierd
         gcc
-        gopls
         clang-tools
 
         nixfmt-classic
-        tailwindcss-language-server
-        astro-language-server
         graphql-language-service-cli
-
-        # java/kotlin 
-        kotlin-language-server
-        ktfmt
-        google-java-format
-        jdt-language-server
 
         git
         nodejs_22

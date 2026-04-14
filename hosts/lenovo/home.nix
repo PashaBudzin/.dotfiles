@@ -26,8 +26,10 @@
 
     ../../modules/scripts/scripts.nix
 
-    # ../../modules/home/catppuccin.nix
-    # ../../modules/home/gtk.nix
+    ../../modules/home/devtools/js.nix
+    ../../modules/home/devtools/python.nix
+    ../../modules/home/devtools/rust.nix
+    ../../modules/home/devtools/go.nix
   ];
 
   home.username = userSettings.username;
@@ -55,8 +57,6 @@
 
   dev.nvim.enable = true;
   dev.nvim.cloneConfig = true;
-
-  # dev.androidStudio = true;
 
   dev.tmux = true;
 

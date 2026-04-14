@@ -13,16 +13,14 @@ with lib;
 
   config = {
     environment.systemPackages = mkIf config.utils.devtools [
-      pkgs.bun
-      pkgs.go
-      pkgs.rustup
-      pkgs.clippy
-      pkgs.python3
-      pkgs.python3Packages.matplotlib
+
       pkgs.insomnia
+
       pkgs.perl
       pkgs.gnumake
+
       pkgs.lsof
+
       pkgs.opencode
     ];
 
