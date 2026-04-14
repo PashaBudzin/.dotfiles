@@ -43,8 +43,8 @@
 
         nixfmt-classic
         graphql-language-service-cli
-
         git
+
         nodejs_22
         tree-sitter
         reflex
