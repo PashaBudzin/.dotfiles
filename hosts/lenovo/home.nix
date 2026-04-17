@@ -30,6 +30,7 @@
     ../../modules/home/devtools/python.nix
     ../../modules/home/devtools/rust.nix
     ../../modules/home/devtools/go.nix
+    ../../modules/home/vscode.nix
   ];
 
   home.username = userSettings.username;
