@@ -69,10 +69,13 @@
           bindkey '^n' history-search-forward
           bindkey '^[w' kill-region
 
+          bind C-o display-popup -E "tms switch"
+
           HISTSIZE=5000
           HISTFILE=~/.zsh_history
           SAVEHIST=$HISTSIZE
           HISTDUP=erase
+
           setopt appendhistory
           setopt sharehistory
           setopt hist_ignore_space
