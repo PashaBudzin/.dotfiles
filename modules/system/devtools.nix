@@ -21,7 +21,6 @@ with lib;
 
       pkgs.lsof
 
-      pkgs.opencode
     ];
 
     programs.nix-ld.enable = config.utils.devtools;

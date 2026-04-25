@@ -2,24 +2,9 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-    mutableExtensionsDir = false;
-    extensions = with pkgs.vscode-extensions; [
-      catppuccin.catppuccin-vsc
-      danklinux.dms-theme
-      enkia.tokyo-night
-      formulahendry.acp-client
-      guichina.code-telescope
-      james-yu.latex-workshop
-      ms-python.python
-      ms-python.vscode-python-envs
-      ms-toolsai.jupyter
-      ms-toolsai.jupyter-keymap
-      ms-toolsai.jupyter-renderers
-      ms-toolsai.vscode-jupyter-cell-tags
-      ms-toolsai.vscode-jupyter-slideshow
-      tombi-toml.tombi
-      vscodevim.vim
-    ];
+
+    mutableExtensionsDir = true;
+
     userSettings = {
       "workbench.colorTheme" = "Dynamic Base16 DankShell (Dark)";
       "editor.fontLigatures" = true;

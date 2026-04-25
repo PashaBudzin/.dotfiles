@@ -8,6 +8,8 @@
     ../../modules/home/neovim/nvim.nix
     ../../modules/home/terminal/kitty.nix
 
+    ../../modules/home/opencode.nix
+
     ../../modules/home/gnome.nix
     ../../modules/home/apps.nix
     ../../modules/home/waybar.nix

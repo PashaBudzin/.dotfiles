@@ -17,13 +17,13 @@
 
       extraConfig = ''
         unbind r
+
         bind r source-file ~/.config/tmux/tmux.conf
 
         set -g prefix C-s
 
-        bind j display-popup -E "tms switch"
+        bind u display-popup -E "tms switch"
         bind o display-popup -E "tms"
-
 
         # Set new panes to open in current directory
         bind c new-window -c "#{pane_current_path}"
@@ -77,18 +77,19 @@
     home.file.".config/tms/config.toml".text = ''
       [[search_dirs]]
       path = "/home/${userSettings.username}/proj"
-      depth = 3 
+      depth = 10
 
       [[search_dirs]]
       path = "/home/${userSettings.username}/s"
-      depth = 3
+      depth = 10
 
       [[search_dirs]]
       path = "${userSettings.flakeDir}"
-      depth = 1
+      depth = 10
 
       [[search_dirs]]
       path = "/home/${userSettings.username}/.config/nvim"
+      depth = 10
     '';
   };
 }

@@ -19,6 +19,9 @@
         md = "mkdir";
         cal = "cal -m";
         cd = "z";
+
+        oc = "opencode";
+
         flinit = "nix flake init -t templates#utils-generic";
       };
       description = "Common shell aliases available in bash/zsh.";
@@ -68,8 +71,6 @@
           bindkey '^p' history-search-backward
           bindkey '^n' history-search-forward
           bindkey '^[w' kill-region
-
-          bind C-o display-popup -E "tms switch"
 
           HISTSIZE=5000
           HISTFILE=~/.zsh_history
