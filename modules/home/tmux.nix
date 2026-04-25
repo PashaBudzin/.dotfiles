@@ -68,28 +68,7 @@
         set -g status-position top
         set -g @catppuccin_directory_text "#{pane_current_path}"
 
-        set -g status-right " #(tms sessions)"
       '';
     };
-
-    home.packages = with pkgs; [ tmux-sessionizer ];
-
-    home.file.".config/tms/config.toml".text = ''
-      [[search_dirs]]
-      path = "/home/${userSettings.username}/proj"
-      depth = 10
-
-      [[search_dirs]]
-      path = "/home/${userSettings.username}/s"
-      depth = 10
-
-      [[search_dirs]]
-      path = "${userSettings.flakeDir}"
-      depth = 10
-
-      [[search_dirs]]
-      path = "/home/${userSettings.username}/.config/nvim"
-      depth = 10
-    '';
   };
 }
