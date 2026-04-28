@@ -8,7 +8,7 @@
     ../../modules/system/gaming.nix
     ../../modules/system/kdeconnect.nix
     ../../modules/system/devtools.nix
-    ../../modules/system/programs.nix
+    ../../modules/system/videotools.nix
     ../../modules/system/lsp/nixd.nix
     ../../modules/system/virtualization.nix
     ../../modules/system/nh.nix
@@ -97,7 +97,6 @@
   hyprland.portals = true;
 
   utils.nh = true;
-  utils.common = true;
   utils.devtools = true;
 
   virtualization.qemu = false;

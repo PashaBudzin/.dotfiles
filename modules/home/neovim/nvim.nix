@@ -41,7 +41,7 @@
         gcc
         clang-tools
 
-        nixfmt-classic
+        nixfmt
         graphql-language-service-cli
         git
 
