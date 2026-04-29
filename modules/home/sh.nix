@@ -1,12 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   options = {
-    cli.enable = lib.mkEnableOption
-      "Enable common CLI utilities (fzf, zoxide, btop, fastfetch, lazygit)";
+    cli.enable = lib.mkEnableOption "Enable common CLI utilities (fzf, zoxide, btop, fastfetch, lazygit)";
 
-    cli.direnv.enable =
-      lib.mkEnableOption "Enable direnv with shell integrations";
+    cli.direnv.enable = lib.mkEnableOption "Enable direnv with shell integrations";
 
     cli.shellAliases = lib.mkOption {
       type = lib.types.attrsOf lib.types.str;
@@ -33,8 +36,7 @@
 
     cli.bash.enable = lib.mkEnableOption "Enable Bash with aliases";
 
-    cli.starship.enable =
-      lib.mkEnableOption "Enable Starship prompt with integrations";
+    cli.starship.enable = lib.mkEnableOption "Enable Starship prompt with integrations";
   };
 
   config = lib.mkMerge [
@@ -46,7 +48,11 @@
       programs.btop.enable = true;
       programs.fastfetch.enable = true;
       programs.lazygit.enable = true;
-      home.packages = with pkgs; [ gum dysk jq ];
+      home.packages = with pkgs; [
+        gum
+        dysk
+        jq
+      ];
     })
 
     # Direnv
@@ -89,8 +95,6 @@
           eval "$(zoxide init --cmd cd zsh)"
 
           export PATH=$PATH:$HOME/.volta/bin
-
-          source $HOME/.secrets.sh
         '';
 
         antidote = lib.mkIf config.cli.zsh.useAntidote {
@@ -104,7 +108,12 @@
 
         oh-my-zsh = lib.mkIf config.cli.zsh.useOhMyZsh {
           enable = true;
-          plugins = [ "git" "aws" "sudo" "command-not-found" ];
+          plugins = [
+            "git"
+            "aws"
+            "sudo"
+            "command-not-found"
+          ];
         };
       };
     })
