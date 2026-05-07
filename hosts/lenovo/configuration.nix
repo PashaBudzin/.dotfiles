@@ -1,4 +1,11 @@
-{ pkgs, userSettings, systemSettings, lib, ... }: {
+{
+  pkgs,
+  userSettings,
+  systemSettings,
+  lib,
+  ...
+}:
+{
   imports = [
     ./hardware-configuration.nix
 
@@ -28,6 +35,8 @@
 
   services.geoclue2.enable = true;
   # services.tzupdate.enable = true;
+
+  services.automatic-timezoned.enable = true;
 
   services.localtimed.enable = true;
 
@@ -73,7 +82,10 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = "${userSettings.username}";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -81,7 +93,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   services.flatpak.enable = true;
 
