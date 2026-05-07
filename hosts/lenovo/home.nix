@@ -1,4 +1,10 @@
-{ pkgs, userSettings, inputs, ... }: {
+{
+  pkgs,
+  userSettings,
+  inputs,
+  ...
+}:
+{
   imports = [
     inputs.catppuccin.homeModules.catppuccin
     inputs.zen-browser.homeModules.beta
@@ -66,19 +72,6 @@
   utils.yazi = true;
 
   terminals.kitty = true;
-
-  apps = {
-    zen.enable = true;
-    zen.setDefault = true;
-
-    youtubeMusic = true;
-    materialgram = true;
-    mangohud = true;
-    libresprite = true;
-    pied = true;
-    tdf = true;
-    readest = false;
-  };
 
   programs.home-manager.enable = true;
 

@@ -34,12 +34,10 @@
   time.timeZone = lib.mkForce null;
 
   services.geoclue2.enable = true;
-  # services.tzupdate.enable = true;
 
+  services.tzupdate.enable = true;
   services.automatic-timezoned.enable = true;
-
   services.localtimed.enable = true;
-
   services.timesyncd.enable = true;
 
   i18n.defaultLocale = "en_US.UTF-8";

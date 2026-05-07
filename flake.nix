@@ -27,13 +27,24 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # stylix = {
     #   url = "nix-community/stylix";
     #   inputs.stylix.follows = "nixpkgs";
     # };
   };
 
-  outputs = { nixpkgs, home-manager, catppuccin, ... }@inputs:
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      catppuccin,
+      ...
+    }@inputs:
     let
       settings = import ./settings.nix { pkgs = pkgs; };
       systemSettings = settings.systemSettings;
@@ -42,7 +53,8 @@
       system = systemSettings.system;
 
       pkgs = import nixpkgs { inherit system; };
-    in {
+    in
+    {
       nixosConfigurations = {
         lenovo = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs systemSettings userSettings; };
