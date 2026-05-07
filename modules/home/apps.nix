@@ -1,13 +1,19 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
-let zenEnabled = config.apps.zen.enable or config.apps.zen.setDefault;
-in {
+let
+  zenEnabled = config.apps.zen.enable or config.apps.zen.setDefault;
+in
+{
   options = {
     apps = {
       zen = {
         enable = lib.mkEnableOption "Enable Zen Browser.";
-        setDefault = lib.mkEnableOption
-          "Set Zen as default for HTML/XML/HTTP MIME types and BROWSER env variable.";
+        setDefault = lib.mkEnableOption "Set Zen as default for HTML/XML/HTTP MIME types and BROWSER env variable.";
       };
 
       youtubeMusic = lib.mkEnableOption "Install YouTube Music app.";
@@ -45,7 +51,6 @@ in {
       };
     };
 
-    home.sessionVariables =
-      lib.mkIf config.apps.zen.setDefault { BROWSER = "zen"; };
+    home.sessionVariables = lib.mkIf config.apps.zen.setDefault { BROWSER = "zen-beta"; };
   };
 }
