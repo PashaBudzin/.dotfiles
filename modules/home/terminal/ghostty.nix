@@ -1,1 +1,6 @@
-{ pkgs, ... }: { programs.ghostty = { enable = true; }; }
+{ pkgs, ... }: { 
+    programs.ghostty = { 
+        enable = true;
+        package = pkgs.ghostty-bin;
+    }; 
+}
