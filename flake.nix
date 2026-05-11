@@ -31,6 +31,11 @@
     #   url = "nix-community/stylix";
     #   inputs.stylix.follows = "nixpkgs";
     # };
+
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }; 
   };
 
   outputs = { nixpkgs, home-manager, catppuccin, ... }@inputs:
@@ -53,16 +58,21 @@
           ];
         };
       };
-      # homeConfigurations = {
-      #   ${userSettings.username} = home-manager.lib.homeManagerConfiguration {
-      #     inherit pkgs;
-      #     modules = [ ./home.nix ];
-      #     extraSpecialArgs = {
-      #       inherit inputs;
-      #       inherit userSettings;
-      #       inherit systemSettings;
-      #     };
-      #   };
-      # };
+
+        darwinConfigurations = {
+          m1air = inputs.darwin.lib.darwinSystem {
+            system = "aarch64-darwin"; # Apple Silicon
+
+            specialArgs = {
+              inherit inputs userSettings systemSettings;
+            };
+
+            modules = [
+              ./hosts/m1air/default.nix
+              inputs.home-manager.darwinModules.home-manager
+            ];
+          };
+        };
     };
+
 }
