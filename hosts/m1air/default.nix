@@ -1,4 +1,10 @@
-{ inputs, userSettings, systemSettings, pkgs, ... }:
+{
+  inputs,
+  userSettings,
+  systemSettings,
+  pkgs,
+  ...
+}:
 
 {
   system.stateVersion = 4;
@@ -18,11 +24,11 @@
     inherit inputs userSettings systemSettings;
   };
 
-    environment.systemPackages = with pkgs; [
-      nh
-    ];
+  environment.systemPackages = with pkgs; [
+    nh
+  ];
 
-    environment.variables = {
-      NH_FLAKE = "${userSettings.flakeDir}";
-    };
+  environment.variables = {
+    NH_FLAKE = "${userSettings.flakeDir}";
+  };
 }

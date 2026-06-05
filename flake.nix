@@ -40,7 +40,7 @@
     darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
-    }; 
+    };
   };
 
   outputs =
@@ -71,20 +71,36 @@
         };
       };
 
-        darwinConfigurations = {
-          m1air = inputs.darwin.lib.darwinSystem {
-            system = "aarch64-darwin"; # Apple Silicon
+      darwinConfigurations = {
+        m1air = inputs.darwin.lib.darwinSystem {
+          system = "aarch64-darwin"; # Apple Silicon
 
-            specialArgs = {
-              inherit inputs userSettings systemSettings;
-            };
-
-            modules = [
-              ./hosts/m1air/default.nix
-              inputs.home-manager.darwinModules.home-manager
-            ];
+          specialArgs = {
+            inherit inputs userSettings systemSettings;
           };
+
+          modules = [
+            ./hosts/m1air/default.nix
+            inputs.home-manager.darwinModules.home-manager
+          ];
         };
+      };
+
+      homeConfigurations = {
+        generic-linux = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+          };
+
+          extraSpecialArgs = {
+            inherit inputs userSettings systemSettings;
+          };
+
+          modules = [
+            ./hosts/generic-linux/default.nix
+          ];
+        };
+      };
     };
 
 }

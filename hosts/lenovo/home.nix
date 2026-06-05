@@ -71,7 +71,10 @@
 
   utils.yazi = true;
 
-  terminals.kitty = true;
+  terminals.kitty = {
+    enable = true;
+    config.enable = true;
+  };
 
   programs.home-manager.enable = true;
 
