@@ -62,4 +62,9 @@
   home.sessionVariables = {
     NH_FLAKE = userSettings.flakeDir;
   };
+
+  home.sessionPath = [
+    "$HOME/.nix-profile/bin"
+    "$HOME/.local/bin"
+  ];
 }
