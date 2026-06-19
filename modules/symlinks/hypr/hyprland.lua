@@ -31,3 +31,5 @@ hl.config({
         }
     }
 })
+
+hl.workspace_rule({ workspace = "2", layout = "scrolling", layout_opts = { direction = "right" } })
