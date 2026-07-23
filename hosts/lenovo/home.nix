@@ -17,25 +17,23 @@
 
     ../../modules/home/opencode.nix
     ../../modules/home/apps.nix
-    #   ../../modules/home/waybar.nix
-    #   ../../modules/home/rofi.nix
 
     ../../modules/home/tmux.nix
-    #   ../../modules/home/cursor.nix
+    ../../modules/home/cursor.nix
     ../../modules/home/git.nix
-    #   ../../modules/home/yazi.nix
+    ../../modules/home/yazi.nix
 
-    #   ../../modules/home/fonts.nix
+    ../../modules/home/fonts.nix
 
     ../../modules/home/hyprland/hyprland.nix
 
     ../../modules/scripts/scripts.nix
 
-    #   ../../modules/home/devtools/js.nix
-    #   ../../modules/home/devtools/python.nix
-    #   ../../modules/home/devtools/rust.nix
-    #   ../../modules/home/devtools/go.nix
-    #   ../../modules/home/vscode.nix
+    ../../modules/home/devtools/js.nix
+    ../../modules/home/devtools/python.nix
+    ../../modules/home/devtools/rust.nix
+    ../../modules/home/devtools/go.nix
+    # ../../modules/home/vscode.nix
   ];
 
   home.username = userSettings.username;
