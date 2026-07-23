@@ -15,15 +15,31 @@
     ../../modules/system/gaming.nix
     ../../modules/system/kdeconnect.nix
     ../../modules/system/devtools.nix
-    ../../modules/system/videotools.nix
+    #   ../../modules/system/videotools.nix
     ../../modules/system/lsp/nixd.nix
-    ../../modules/system/virtualization.nix
     ../../modules/system/nh.nix
     ../../modules/system/network.nix
+
+    ../../modules/system/noctalia.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot = {
+    plymouth = {
+      enable = true;
+    };
+
+    # Enable "Silent boot"
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "rd.udev.log_level=3"
+      "rd.systemd.show_status=auto"
+    ];
+  };
 
   nix.optimise.automatic = true;
 
@@ -100,9 +116,6 @@
 
   system.autoupdate = true;
 
-  desktop.xserver = true;
-  desktop.gnome = true;
-  desktop.gdm = true;
   desktop.gtkPortals = true;
   desktop.waylandEnvironmentVariables = true;
 
@@ -112,17 +125,22 @@
   utils.nh = true;
   utils.devtools = true;
 
-  virtualization.qemu = false;
-  virtualization.waydroid = false;
-
-  networking.zerotier = true;
-  networking.openCommonPorts = true;
-
   apps.kdeconnect = true;
 
   gaming.enable = true;
 
   lsp.nix = true;
+
+  services.power-profiles-daemon.enable = true;
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
+
+  services.blueman.enable = true;
+
+  systemd.oomd.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

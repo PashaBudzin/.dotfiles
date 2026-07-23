@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   options = {
@@ -29,7 +34,14 @@
       xdgOpenUsePortal = true;
     };
 
-    environment.systemPackages =
-      lib.mkIf config.desktop.hyprland (with pkgs; [ mesa libglvnd libdrm ]);
+    environment.systemPackages = lib.mkIf config.desktop.hyprland (
+      with pkgs;
+      [
+        mesa
+        libglvnd
+        libdrm
+        brightnessctl
+      ]
+    );
   };
 }

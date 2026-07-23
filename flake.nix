@@ -17,15 +17,25 @@
     };
     catppuccin.url = "github:catppuccin/nix";
 
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell/stable";
+    noctalia = {
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dgop = {
-      url = "github:AvengeMedia/dgop";
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    #dms = {
+    #  url = "github:AvengeMedia/DankMaterialShell/stable";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+
+    #dgop = {
+    #  url = "github:AvengeMedia/dgop";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
     helium = {
       url = "github:schembriaiden/helium-browser-nix-flake";

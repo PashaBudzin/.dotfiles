@@ -5,11 +5,13 @@
   home.packages = with pkgs; [
     pear-desktop
     inputs.helium.packages.${system}.default
-    materialgram
+    telegram-desktop
     mangohud
     libresprite
     pied
     tdf
+    nautilus
+    t3code
   ];
 
   xdg.mimeApps = {

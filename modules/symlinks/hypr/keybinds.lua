@@ -1,17 +1,19 @@
 local mainMod = "SUPER"
 
-local terminal = "kitty";
-local menu = "dms ipc call launcher open";
-local browser = "zen-browser";
-local fileManager = "nautilus";
+local terminal = "kitty"
+local menu = "noctalia msg panel-toggle launcher"
+local browser = "zen-browser"
+local fileManager = "nautilus"
 --
-
 
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 
-hl.bind(mainMod .. " + SHIFT + D",
-    hl.dsp.exec_cmd(
-        "[workspace 1 silent fullscreen] kitty -o window_padding_width=0 -o confirm_os_window_close=1 -e 'tms'"))
+hl.bind(
+	mainMod .. " + SHIFT + D",
+	hl.dsp.exec_cmd(
+		"[workspace 1 silent fullscreen] kitty -o window_padding_width=0 -o confirm_os_window_close=1 -e 'tms'"
+	)
+)
 
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
@@ -54,7 +56,7 @@ hl.bind(mainMod .. " + SHIFT + 8", hl.dsp.window.move({ workspace = 8 }))
 hl.bind(mainMod .. " + SHIFT + 9", hl.dsp.window.move({ workspace = 9 }))
 hl.bind(mainMod .. " + SHIFT + 0", hl.dsp.window.move({ workspace = 10 }))
 
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | wl-copy"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("grim - | wl-copy"))
 
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("hyprpicker | wl-copy"))
@@ -72,8 +74,16 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize())
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl set 10%-"))
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl set 10%+"))
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"), { repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"), { repeating = true })
+hl.bind(
+	"XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+"),
+	{ repeating = true }
+)
+hl.bind(
+	"XF86AudioLowerVolume",
+	hl.dsp.exec_cmd("wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-"),
+	{ repeating = true }
+)
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd("playerctl play-pause"))

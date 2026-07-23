@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   options = {
@@ -64,7 +69,10 @@
     xdg.portal = lib.mkIf config.desktop.gtkPortals {
       enable = true;
       xdgOpenUsePortal = true;
-      extraPortals = with pkgs; [ xdg-desktop-portal-gtk xdg-desktop-portal ];
+      extraPortals = with pkgs; [
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal
+      ];
     };
   };
 }

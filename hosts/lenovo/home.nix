@@ -6,39 +6,36 @@
 }:
 {
   imports = [
-    inputs.catppuccin.homeModules.catppuccin
     inputs.zen-browser.homeModules.beta
-    inputs.dms.homeModules.dank-material-shell
 
     ../../modules/home/sh.nix
     ../../modules/home/neovim/nvim.nix
+
+    ../../modules/home/noctalia/noctalia.nix
+
     ../../modules/home/terminal/kitty.nix
 
     ../../modules/home/opencode.nix
-
-    ../../modules/home/gnome.nix
     ../../modules/home/apps.nix
-    ../../modules/home/waybar.nix
-    ../../modules/home/rofi.nix
+    #   ../../modules/home/waybar.nix
+    #   ../../modules/home/rofi.nix
 
     ../../modules/home/tmux.nix
-    ../../modules/home/cursor.nix
+    #   ../../modules/home/cursor.nix
     ../../modules/home/git.nix
-    ../../modules/home/yazi.nix
+    #   ../../modules/home/yazi.nix
 
-    ../../modules/home/fonts.nix
-
-    ../../modules/home/dms/dms.nix
+    #   ../../modules/home/fonts.nix
 
     ../../modules/home/hyprland/hyprland.nix
 
     ../../modules/scripts/scripts.nix
 
-    ../../modules/home/devtools/js.nix
-    ../../modules/home/devtools/python.nix
-    ../../modules/home/devtools/rust.nix
-    ../../modules/home/devtools/go.nix
-    ../../modules/home/vscode.nix
+    #   ../../modules/home/devtools/js.nix
+    #   ../../modules/home/devtools/python.nix
+    #   ../../modules/home/devtools/rust.nix
+    #   ../../modules/home/devtools/go.nix
+    #   ../../modules/home/vscode.nix
   ];
 
   home.username = userSettings.username;
@@ -50,7 +47,7 @@
     QT_QPA_PLATFORM = "wayland";
   };
 
-  desktops.gnome = true;
+  # desktops.gnome = true;
 
   cli.enable = true;
   cli.direnv.enable = true;
@@ -69,12 +66,9 @@
 
   dev.tmux = true;
 
-  utils.yazi = true;
+  #utils.yazi = true;
 
-  terminals.kitty = {
-    enable = true;
-    config.enable = true;
-  };
+  programs.kitty.enable = true;
 
   programs.home-manager.enable = true;
 

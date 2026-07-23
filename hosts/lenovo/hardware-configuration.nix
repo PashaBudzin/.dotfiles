@@ -8,38 +8,57 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usb_storage" "sd_mod" "sdhci_pci" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f6ce28a8-a307-458f-91a8-c0e37a1dacfe";
+    { device = "/dev/disk/by-uuid/56833a85-8e98-45f1-95d7-0f5924ac394b";
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/f6ce28a8-a307-458f-91a8-c0e37a1dacfe";
+    { device = "/dev/disk/by-uuid/56833a85-8e98-45f1-95d7-0f5924ac394b";
       fsType = "btrfs";
       options = [ "subvol=@nix" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/f6ce28a8-a307-458f-91a8-c0e37a1dacfe";
+    { device = "/dev/disk/by-uuid/56833a85-8e98-45f1-95d7-0f5924ac394b";
       fsType = "btrfs";
       options = [ "subvol=@home" ];
     };
 
+  fileSystems."/var/log" =
+    { device = "/dev/disk/by-uuid/56833a85-8e98-45f1-95d7-0f5924ac394b";
+      fsType = "btrfs";
+      options = [ "subvol=@log" ];
+    };
+
+  fileSystems."/.snapshots" =
+    { device = "/dev/disk/by-uuid/56833a85-8e98-45f1-95d7-0f5924ac394b";
+      fsType = "btrfs";
+      options = [ "subvol=@snapshots" ];
+    };
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/D64A-5AFC";
+    { device = "/dev/disk/by-uuid/7DE4-2DB1";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/3f7a6f07-683c-4dca-8530-c0d2cdec229d"; }
-    ];
+  fileSystems."/swap" =
+    { device = "/dev/disk/by-uuid/56833a85-8e98-45f1-95d7-0f5924ac394b";
+      fsType = "btrfs";
+      options = [ "subvol=@swap" ];
+    };
+
+  swapDevices = [{
+	device = "/swap/swapfile";
+	size = 8192;
+}];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
