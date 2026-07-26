@@ -21,6 +21,7 @@
     ../../modules/system/network.nix
 
     ../../modules/system/noctalia.nix
+    ../../modules/system/docker.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
