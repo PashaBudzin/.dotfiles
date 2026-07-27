@@ -3,7 +3,7 @@
 let
   tms = pkgs.writeShellScriptBin "tms" ''
     export PATH=${
-      pkgs.lib.makeBinPath [ pkgs.fzf pkgs.findutils pkgs.coreutils pkgs.tmux ]
+      pkgs.lib.makeBinPath [ pkgs.fzf pkgs.findutils pkgs.coreutils pkgs.tmux pkgs.git ]
     }:$PATH
 
     : "''${TMS_DIRS:=$HOME/proj $HOME/s $HOME/.dotfiles $HOME/.config/nvim}"
@@ -15,10 +15,30 @@ let
                 find "$dir" -mindepth 0 -maxdepth 1 -type d \
                     -exec test -d "{}/.git" \; -print 2>/dev/null
               done \
-            | fzf
+            | while IFS= read -r repo; do
+                printf "%s\n" "$repo"
+                git -C "$repo" worktree list 2>/dev/null \
+                  | awk -v repo="$repo" "
+                      NR > 1 {
+                        path = \$1
+                        tag = \$NF
+                        gsub(/^\\[|\\]\$/, \"\", tag)
+                        gsub(/^\\(|\\)\$/, \"\", tag)
+                        if (path != repo) print path \"|\" tag
+                      }
+                    "
+              done \
+            | fzf --delimiter='\|' --with-nth=1,2 \
+                  --preview='
+                    echo " {1}"
+                    echo " ─────────────────────────────"
+                    git -C {1} log --oneline --color=always -10 2>/dev/null
+                  ' \
+                  --preview-window='right:60%'
         )
 
         [ -z "$selected" ] && exit 0
+        selected="''${selected%%|*}"
 
         selected_name=$(basename "$selected" | tr . _)
 
