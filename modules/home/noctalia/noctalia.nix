@@ -1,10 +1,19 @@
-{ inputs, pkgs, ... }:
+{ config, inputs, pkgs, ... }:
 
 {
   home.packages = [
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs.adw-gtk3
+    pkgs.qt6Packages.qt6ct
   ];
+
+  home.sessionVariables.QT_QPA_PLATFORMTHEME = "qt6ct";
+
+  xdg.configFile."qt6ct/qt6ct.conf".text = ''
+    [Appearance]
+    color_scheme_path=${config.xdg.configHome}/qt6ct/colors/noctalia.conf
+    custom_palette=true
+  '';
 
   programs.kitty = {
     extraConfig = ''
