@@ -9,6 +9,7 @@ in
     wl-clipboard
     slurp
     grim
+    playerctl
   ];
 
   xdg.portal.enable = true;

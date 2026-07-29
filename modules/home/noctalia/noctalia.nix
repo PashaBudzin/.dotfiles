@@ -1,4 +1,9 @@
-{ config, inputs, pkgs, ... }:
+{
+  config,
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
   home.packages = [
@@ -29,6 +34,15 @@
         gtk-theme = "adw-gtk3";
         color-scheme = "prefer-dark";
       };
+    };
+  };
+
+  gtk = {
+    enable = true;
+
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
   };
 }
