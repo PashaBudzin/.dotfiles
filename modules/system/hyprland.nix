@@ -1,47 +1,26 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 
 {
-  options = {
-    desktop.hyprland = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Whether to enable Hyprland.";
-    };
-
-    hyprland.portals = lib.mkOption {
-      type = lib.types.bool;
-      default = false;
-      description = "Whether to enable XDG portals for Hyprland.";
-    };
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    withUWSM = true;
+    portalPackage = pkgs.xdg-desktop-portal-gtk;
   };
 
-  config = {
-    programs.hyprland = lib.mkIf config.desktop.hyprland {
-      enable = true;
-      xwayland.enable = true;
-      withUWSM = true;
-      portalPackage = pkgs.xdg-desktop-portal-gtk;
-    };
-
-    xdg.portal = lib.mkIf config.hyprland.portals {
-      extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-      configPackages = [ pkgs.hyprland ];
-      xdgOpenUsePortal = true;
-    };
-
-    environment.systemPackages = lib.mkIf config.desktop.hyprland (
-      with pkgs;
-      [
-        mesa
-        libglvnd
-        libdrm
-        brightnessctl
-      ]
-    );
+  xdg.portal = {
+    extraPortals = [
+      pkgs.xdg-desktop-portal-hyprland
+      pkgs.xdg-desktop-portal-gtk
+    ];
+    configPackages = [ pkgs.hyprland ];
+    xdgOpenUsePortal = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    mesa
+    libglvnd
+    libdrm
+    brightnessctl
+  ];
 }

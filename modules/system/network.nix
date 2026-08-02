@@ -15,6 +15,7 @@ with lib;
 
   services.tailscale = {
     enable = true;
+    extraSetFlags = [ "--ssh" ];
   };
 
   systemd.services.tailscaled.serviceConfig.Environment = [

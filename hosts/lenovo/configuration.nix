@@ -120,8 +120,7 @@
   desktop.gtkPortals = true;
   desktop.waylandEnvironmentVariables = true;
 
-  desktop.hyprland = true;
-  hyprland.portals = true;
+
 
   utils.nh = true;
   utils.devtools = true;
