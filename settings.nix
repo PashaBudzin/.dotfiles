@@ -9,10 +9,10 @@
   };
   userSettings = {
     # ------- USER SETTINGS ---------
-    username = "pasha";
+    username = "natalabudzina";
     name = "PashaBudzin";
     email = "pashabudzin@proton.me";
-    flakeDir = "/home/pasha/.dotfiles";
+    flakeDir = "/Users/natalabudzina/.dotfiles";
     terminal = "kitty";
   };
 }

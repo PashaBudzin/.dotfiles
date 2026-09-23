@@ -28,7 +28,12 @@
     nh
   ];
 
-  environment.variables = {
-    NH_FLAKE = "${userSettings.flakeDir}";
-  };
+    environment.variables = {
+      NH_FLAKE = "${userSettings.flakeDir}";
+    };
+
+    nix.settings.experimental-features = [
+        "nix-command"
+        "flakes"
+    ];
 }
