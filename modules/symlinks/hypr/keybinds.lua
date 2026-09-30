@@ -2,7 +2,7 @@ local mainMod = "SUPER"
 
 local terminal = "kitty"
 local menu = "noctalia msg panel-toggle launcher"
-local browser = "zen-browser"
+local browser = "zen-beta"
 local fileManager = "nautilus"
 --
 
@@ -14,6 +14,8 @@ hl.bind(
 		"[workspace 1 silent fullscreen] kitty -o window_padding_width=0 -o confirm_os_window_close=1 -e 'tms'"
 	)
 )
+
+hl.bind(mainMod .. " + Y", hl.dsp.exec_cmd("pearrun"))
 
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())

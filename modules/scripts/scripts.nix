@@ -1,5 +1,5 @@
 { ... }:
 
 {
-  imports = [ ./procrsm.nix ./tms.nix ];
+  imports = [ ./pearrun.nix ./procrsm.nix ./tms.nix ];
 }

@@ -52,7 +52,7 @@
 
   services.geoclue2.enable = true;
 
-  services.tzupdate.enable = true;
+  # services.tzupdate.enable = true;
   services.automatic-timezoned.enable = true;
   services.localtimed.enable = true;
   services.timesyncd.enable = true;
@@ -119,8 +119,6 @@
 
   desktop.gtkPortals = true;
   desktop.waylandEnvironmentVariables = true;
-
-
 
   utils.nh = true;
   utils.devtools = true;
