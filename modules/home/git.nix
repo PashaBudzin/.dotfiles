@@ -6,9 +6,11 @@
   config = lib.mkIf config.dev.git {
     programs.git = {
       enable = true;
-      userName = userSettings.name;
-      userEmail = userSettings.email;
-      extraConfig = {
+      settings = {
+        user = {
+          name = userSettings.name;
+          email = userSettings.email;
+        };
         init.defaultBranch = "main";
         credential.helper = "!${pkgs.gh}/bin/gh auth git-credential";
       };
